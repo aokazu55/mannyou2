@@ -1,7 +1,7 @@
 #◆README
 
 ####以下、課題で使用する3テーブルです。
-user、task、labelの3つを使用します。
+最終的にはuser、task、labelの3つを使用します。
 
 | *users* |  |
 |:--|:--|
@@ -15,8 +15,9 @@ user、task、labelの3つを使用します。
 | **user_id** | string |
 | **title** | string |
 | **content** | text |
-| **deadline** | string |
+| **deadline** | date |
 | **priority** | string |
+| **status** | string |
 
 | *labels* |  |
 |:--|:--|
