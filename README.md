@@ -1,7 +1,7 @@
 #◆README
 
 ####以下、課題で使用する3テーブルです。
-user、task、labelの3つを使用します。
+最終的にはuser、task、labelの3つを使用します。
 
 | *users* |  |
 |:--|:--|
@@ -15,8 +15,9 @@ user、task、labelの3つを使用します。
 | **user_id** | string |
 | **title** | string |
 | **content** | text |
-| **deadline** | string |
+| **deadline** | date |
 | **priority** | string |
+| **status** | string |
 
 | *labels* |  |
 |:--|:--|
@@ -28,31 +29,28 @@ user、task、labelの3つを使用します。
 
 ## herokuデプロイのやり方
 
-### カレントブランチのファイルをステージング領域へ
-1.git add -A
+### 1:カレントブランチのファイルをステージング領域へ
 
-### 作業内容のメッセージを記載してコミット
-2.git commit -m "〇〇"
+### 2:作業内容のメッセージを記載してコミット
 
-### herokuにログイン
-3.heroku login
-※パスワード入力する
+### 3:herokuにログイン
 
-### heroku上にアプリを作成
-4.heroku create
+### 4:heroku上にアプリを作成
 
-### herokuにデプロイする
-5.git push heroku master
+### 5:herokuにデプロイする
 
-### herokuのデータベース実行
-6.heroku run rails db:migrate
+### 6:herokuのデータベース実行
 
-### urlを確認し、アクセス
-7.heroku open
+### 7:urlを確認し、アクセス
 
-### heroku自動デプロイ設定
-8.ダッシュボードから対象アプリを開く  
-9.メニューの中の「deploy」へ  
-10.「DeploymentMethod」で「Github」へ変更  
-11.App connected to Githubの項目で対象のリポジトリを選択し、「masterブランチ」を選択  
-12.「Automatic Deploy」を「enable」へ変更
+## heroku自動デプロイ設定手順
+
+### 1:ダッシュボードから対象アプリを開く  
+
+### 2:メニューの中のdeployへ進む
+
+### 3:DeploymentMethodでGithubへ変更
+
+### 4:App connected to Githubの項目で対象のリポジトリを選択し、masterブランチを選択
+
+### 5:Automatic Deployをenableへ変更
