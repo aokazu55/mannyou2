@@ -20,7 +20,7 @@ ActiveRecord::Schema.define(version: 2020_03_02_113428) do
     t.text "content", null: false
     t.string "deadline", null: false
     t.string "priority", null: false
-    t.string "status", null: false
+    t.string "status"
     t.bigint "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
