@@ -1,0 +1,24 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong><%= t '.Title' %>:</strong>
+  <%= @task.title %>
+</p>
+
+<p>
+  <strong><%= t '.Content' %>:</strong>
+  <%= @task.content %>
+</p>
+
+<p>
+  <strong><%= t '.Deadline' %>:</strong>
+  <%= @task.deadline %>
+</p>
+
+<p>
+  <strong><%= t '.Priority' %>:</strong>
+  <%= @task.priority %>
+</p>
+
+<%= link_to t('tasks.show.Edit'), edit_task_path(@task) %> |
+<%= link_to t('tasks.show.Back'), tasks_path %>

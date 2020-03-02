@@ -1,24 +1,58 @@
-# README
+#◆README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+####以下、課題で使用する3テーブルです。
+user、task、labelの3つを使用します。
 
-Things you may want to cover:
+| *users* |  |
+|:--|:--|
+| **id** | string |
+| **name** | string |
+| **email** | string |
+| **password** | string |
 
-* Ruby version
+| *tasks* |  |
+|:--|:--|
+| **user_id** | string |
+| **title** | string |
+| **content** | text |
+| **deadline** | string |
+| **priority** | string |
 
-* System dependencies
+| *labels* |  |
+|:--|:--|
+| **user_id** | string |
+| **title** | string |
+| **content** | text |
 
-* Configuration
 
-* Database creation
 
-* Database initialization
+## herokuデプロイのやり方
 
-* How to run the test suite
+### カレントブランチのファイルをステージング領域へ
+1.git add -A
 
-* Services (job queues, cache servers, search engines, etc.)
+### 作業内容のメッセージを記載してコミット
+2.git commit -m "〇〇"
 
-* Deployment instructions
+### herokuにログイン
+3.heroku login
+※パスワード入力する
 
-* ...
+### heroku上にアプリを作成
+4.heroku create
+
+### herokuにデプロイする
+5.git push heroku master
+
+### herokuのデータベース実行
+6.heroku run rails db:migrate
+
+### urlを確認し、アクセス
+7.heroku open
+
+### heroku自動デプロイ設定
+8.ダッシュボードから対象アプリを開く  
+9.メニューの中の「deploy」へ  
+10.「DeploymentMethod」で「Github」へ変更  
+11.App connected to Githubの項目で対象のリポジトリを選択し、「masterブランチ」を選択  
+12.「Automatic Deploy」を「enable」へ変更

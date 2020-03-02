@@ -1,0 +1,40 @@
+ja:
+  tasks:
+    _form:
+      error: "エラー"
+      title: "タイトル"
+      content: "タスク内容"
+      deadline: "完了期限"
+      priority: "優先順位"
+      user_id: "ユーザーID"
+
+    edit:
+      Editing Task: "タスク編集"
+      Show: '詳細'
+      Back: '戻る'
+
+    index:
+      Tasks: "タスク一覧"
+      Title: "タイトル"
+      Content: "タスク内容"
+      Deadline: "完了期限"
+      Priority: "優先順位"
+      User: "ユーザー"
+      Show: "詳細"
+      Edit: "編集"
+      Destroy: "削除"
+      Are you sure?: "本当に良いですか？"
+      New Task: "タスク新規作成"
+
+    new:
+      Back: '戻る'
+      New Task: "新しいタスク"
+
+    show:
+      Title: "タイトル"
+      Content: "タスク内容"
+      Deadline: "完了期限"
+      Priority: "優先順位"
+      User: "ユーザー"
+      Back: "戻る"
+      Edit: "編集"
