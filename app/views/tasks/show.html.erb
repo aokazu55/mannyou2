@@ -1,34 +1,24 @@
 <p id="notice"><%= notice %></p>
 
 <p>
-  <strong>Title:</strong>
+  <strong><%= t '.Title' %>:</strong>
   <%= @task.title %>
 </p>
 
 <p>
-  <strong>Content:</strong>
+  <strong><%= t '.Content' %>:</strong>
   <%= @task.content %>
 </p>
 
 <p>
-  <strong>Deadline:</strong>
+  <strong><%= t '.Deadline' %>:</strong>
   <%= @task.deadline %>
 </p>
 
 <p>
-  <strong>Priority:</strong>
+  <strong><%= t '.Priority' %>:</strong>
   <%= @task.priority %>
 </p>
 
-<p>
-  <strong>Status:</strong>
-  <%= @task.status %>
-</p>
-
-<p>
-  <strong>User:</strong>
-  <%= @task.user_id %>
-</p>
-
-<%= link_to 'Edit', edit_task_path(@task) %> |
-<%= link_to 'Back', tasks_path %>
+<%= link_to t('tasks.show.Edit'), edit_task_path(@task) %> |
+<%= link_to t('tasks.show.Back'), tasks_path %>
