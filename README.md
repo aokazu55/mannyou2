@@ -53,6 +53,6 @@ user、task、labelの3つを使用します。
 ### heroku自動デプロイ設定
 8.ダッシュボードから対象アプリを開く  
 9.メニューの中の「deploy」へ  
-10.「DeploymentMethod」をGithubへ変更  
+10.「DeploymentMethod」で「Github」へ変更  
 11.App connected to Githubの項目で対象のリポジトリを選択し、「masterブランチ」を選択  
 12.「Automatic Deploy」を「enable」へ変更
