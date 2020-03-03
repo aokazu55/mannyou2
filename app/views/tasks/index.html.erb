@@ -10,7 +10,7 @@
   <%= f.text_field :title %>
 
   <%= f.label :status_search, "ステータスで検索" %>
-  <%= f.select :status, [["",""],["未着手",'未着手'], ["着手済み", '着手済み'], ["完了", '完了']] %>
+  <%= f.select :status, [["",""],["未着手",'未着手'], ["着手中", '着手中'], ["完了", '完了']] %>
 <% end %>
 
 <table>
@@ -20,6 +20,7 @@
       <th><%= t '.Content' %></th>
       <th><%= t '.Deadline' %></th>
       <th><%= t '.Priority' %></th>
+      <th><%= t '.Status' %></th>
       <th colspan="3"></th>
     </tr>
   </thead>
@@ -31,6 +32,7 @@
         <td><%= task.content %></td>
         <td><%= task.deadline %></td>
         <td><%= task.priority %></td>
+        <td><%= task.status %></td>
         <td><%= link_to t('tasks.index.Show'), task %></td>
         <td><%= link_to t('tasks.index.Edit'), edit_task_path(task) %></td>
         <td><%= link_to t('tasks.index.Destroy'), task, method: :delete, data: { confirm: 'Are you sure?' } %></td>

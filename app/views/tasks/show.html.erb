@@ -20,5 +20,10 @@
   <%= @task.priority %>
 </p>
 
+<p>
+  <strong><%= t '.Status' %>:</strong>
+  <%= @task.status %>
+</p>
+
 <%= link_to t('tasks.show.Edit'), edit_task_path(@task) %> |
 <%= link_to t('tasks.show.Back'), tasks_path %>
