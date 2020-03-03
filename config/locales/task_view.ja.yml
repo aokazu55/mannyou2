@@ -6,6 +6,7 @@ ja:
       content: "タスク内容"
       deadline: "完了期限"
       priority: "優先順位"
+      status: "着手状況"
       user_id: "ユーザーID"
 
     edit:
@@ -19,6 +20,7 @@ ja:
       Content: "タスク内容"
       Deadline: "完了期限"
       Priority: "優先順位"
+      Status: "着手状況"
       User: "ユーザー"
       Show: "詳細"
       Edit: "編集"
@@ -35,6 +37,7 @@ ja:
       Content: "タスク内容"
       Deadline: "完了期限"
       Priority: "優先順位"
+      Status: "着手状況"
       User: "ユーザー"
       Back: "戻る"
       Edit: "編集"
