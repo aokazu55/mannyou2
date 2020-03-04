@@ -2,8 +2,19 @@ class TasksController < ApplicationController
   before_action :set_task, only: [:show, :edit, :update, :destroy]
 
   def index
-    @tasks = Task.all.order('created_at DESC')
+    if params[:sort_deadline]
+      @tasks = Task.all.order(deadline: :asc)
+    elsif params[:sort_priority]
+      @tasks = Task.all.order(priority: :desc)
+    elsif params[:title].blank? && params[:status]
+      @tasks = Task.where('status LIKE ?', "%#{params[:status]}%")
+    elsif params[:title]
+      @tasks = Task.where('title LIKE ?', "%#{params[:title]}%")
+    else
+      @tasks = Task.all.order(created_at: :desc)
+    end
   end
+
 
   def show
   end
@@ -42,7 +53,22 @@ class TasksController < ApplicationController
       @task = Task.find(params[:id])
     end
 
+    # def order_string
+    #   return 'created_at DESC' unless params.key?(:order)
+    #   order_params.to_h.map { |key, val| "#{key} #{val.upcase}" }.join(',')
+    # end
+    #
+    # def prepare_search_attr
+    #   @search_attr = { title: '' }
+    #   @search_attr = task_params.delete_if { |_key, val| val.blank? } if params.key?(:task)
+    # end
+
     def task_params
       params.require(:task).permit(:title, :content, :deadline, :priority, :status, :user_id)
     end
+
+    # def order_params
+    #   params.require(:order).permit(:deadline, :priority)
+    # end
+
 end

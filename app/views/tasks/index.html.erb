@@ -2,8 +2,8 @@
 
 <h1><%= t '.Tasks' %></h1>
 
-<%= link_to "終了期限でソートする", tasks_path(sort_expired: "true") %>
-<%= link_to "優先順位ソートする", tasks_path(sort_priority: "true") %>
+<%= link_to "完了期限でソートする", tasks_path(sort_deadline: "true") %>
+<%= link_to "優先順位でソートする", tasks_path(sort_priority: "true") %>
 
 <%= form_with( model: Task.new, local: true, url: tasks_path, method: 'get' ) do |f| %>
   <%= f.label :title_search, "タイトルで検索" %>
