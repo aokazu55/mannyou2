@@ -3,6 +3,7 @@ class TasksController < ApplicationController
 PER = 6
 
   def index
+      @tasks = Task.all.page(params[:page]).per(PER)
     if params[:sort_deadline]
       @tasks = Task.all.order(deadline: :asc).page(params[:page]).per(6)
     end
@@ -30,7 +31,6 @@ PER = 6
       end
     end
   end
-
 
   def show
   end
