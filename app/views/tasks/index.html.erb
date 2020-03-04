@@ -11,7 +11,8 @@
 
   <%= f.label :status_search, "【着手状況】で検索" %>
   <%= f.select :status, [["",""],["未着手",'未着手'], ["着手中", '着手中'], ["完了", '完了']] %>
-  <%= f.submit('検索') %>
+  <%= f.hidden_field :search, value: 'true' %>
+  <%= f.submit '指定した条件で検索する' %>
 <% end %>
 
 <table>
@@ -45,3 +46,4 @@
 <br>
 
 <%= link_to t('tasks.index.New Task'), new_task_path %>
+<%= paginate @tasks %>

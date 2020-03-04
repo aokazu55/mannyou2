@@ -1,24 +1,33 @@
 class TasksController < ApplicationController
   before_action :set_task, only: [:show, :edit, :update, :destroy]
-PER = 7
+PER = 6
 
   def index
     if params[:sort_deadline]
-      @tasks = Task.all.order(deadline: :asc).page(params[:page]).per(7)
-    elsif params[:sort_priority]
-      @tasks = Task.all.order(priority: :desc)
-    elsif params[:title].blank? && params[:status].blank?
-      @tasks = Task.all.page(params[:page])
-    elsif params[:title].blank? && params[:status]
-      @stauts = params[:status].to_i
-      @tasks = Task.status_search(@status)
-    elsif params[:title] && params[:status].blank?
-       @tasks = Task.title_search(params[:title])
-    elsif params[:title] && params[:status]
-       @status = params[:status].to_i
-       @tasks = Task.title_search(params[:title]).status_search(@status)
-    else
-      @tasks = Task.all.order(created_at: :desc)
+      @tasks = Task.all.order(deadline: :asc).page(params[:page]).per(6)
+    end
+    # deadlineのソート
+
+    if params[:sort_priority]
+      @tasks = Task.all.order(priority: :desc).page(params[:page]).per(6)
+    end
+    # priorityのソート
+
+    if params[:task] && params[:task][:search]
+
+      if params[:task][:title].present? && params[:task][:status].present?
+        #タイトルもステータスもある場合
+        @tasks = Task.title_search(params[:task][:title]).status_search(params[:task][:status]).page(params[:page]).per(6)
+
+      elsif params[:task][:title].empty? && params[:task][:status].present?
+        #タイトルが無く、ステータスはある場合
+        @tasks = Task.status_search(params[:task][:status]).page(params[:page]).per(6)
+
+      elsif params[:task][:title].present? && params[:task][:status] == ""
+        #タイトルがあり、ステータスは無い場合
+        @tasks = Task.title_search(params[:task][:title]).page(params[:page]).per(6)
+
+      end
     end
   end
 
