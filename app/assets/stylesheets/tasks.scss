@@ -1,3 +1,36 @@
 // Place all the styles related to the tasks controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+.ul_form {
+  height: 500px;
+  width: 1200px;
+}
+
+.field_title {
+  width: 1000px;
+  height: 75px;
+}
+
+.field_content {
+  width: 1000px;
+  height: 75px;
+}
+
+.field_deadline {
+  width: 1000px;
+  height: 75px;
+}
+
+.field_priority {
+  width: 1000px;
+  height: 75px;
+}
+
+.field_status {
+  width: 1000px;
+  height: 75px;
+}
+.actions {
+  width: 1000px;
+  height: 75px;
+}

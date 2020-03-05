@@ -21,17 +21,18 @@ pre {
 
 h1 {
   background-color: white;
-  padding: 10px;
   font-size: 50px;
   font-weight: bold;
+  margin: 10px 5px;
   color: #337AB7;
 }
 
 a {
   color: black;
-  padding: 5px 10px;
-  font-size: 20px;
+  font-size: 13px;
   font-weight: bold;
+  text-align: center;
+  vertical-align: middle;
 
   &:visited {
     color: #666;
@@ -44,8 +45,11 @@ a {
 }
 
 th {
-  padding: 30px 15px 30px 15px;
+  padding: 10px;
   font-size: 15px;
+  text-align: center;
+  background-color: #337AB7;
+  color: white;
 }
 
 td {
@@ -53,15 +57,88 @@ td {
 }
 
 label {
-  padding: 20px 5px 2px 5px;
-  font-size: 20px;
+  vertical-align: middle;
+  font-size: 13px;
   font-weight: bold;
+  padding-top: 1.5px;
+  padding-left: 10px;
 }
 
 div {
   &.field, &.actions {
     margin-bottom: 10px;
   }
+}
+
+form {
+  display: inline-flex;
+  vertical-align: middle;
+}
+
+.info_sort {
+  background-color: #337AB7;
+  height: 24px;
+  position: absolute;
+  top: 68%;
+}
+
+.info_form {
+  background-color: #eae8e1;
+  height: 38px;
+  margin-top: 5px;
+  padding-top: 7.6px;
+  color: #337AB7;
+}
+
+.info_status_select {
+  height: 23px;
+  margin-right: 10px;
+  font-weight: bold;
+  text-align: center;
+  vertical-align: middle;
+}
+
+input {
+  height: 23px;
+  padding-left: 30px;
+  padding-right: 30px;
+  font-weight: bold;
+  text-align: center;
+  margin-left: 10px;
+}
+
+.info_back {
+  height: 70px;
+}
+
+.info_back a {
+  height: 40px;
+  font-size: 25px;
+  margin: 20px;
+  margin-left: 15px;
+  padding: 10px;
+  position: absolute;
+  top: 70%;
+  background-color: #eae8e1;
+  color: #337AB7;
+}
+
+.info_sort a {
+  color: white;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 3px 3px;
+  outline-color: #474a4d;
+  margin-top: 25px;
+  margin-left: 30px;
+  width: 80%
+}
+
+.td3, .td4, .td5, .td6, .td7, .td8 {
+  text-align: center;
+  vertical-align: middle;
 }
 
 #notice {
@@ -95,8 +172,4 @@ div {
     font-size: 12px;
     list-style: square;
   }
-}
-
-label {
-  display: block;
 }

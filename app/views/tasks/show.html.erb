@@ -1,5 +1,7 @@
 <p id="notice"><%= notice %></p>
 
+<h1><%= t '.Task_detail' %></h1>
+
 <p>
   <strong><%= t '.Title' %>:</strong>
   <%= @task.title %>
@@ -25,5 +27,7 @@
   <%= @task.status %>
 </p>
 
-<%= link_to t('tasks.show.Edit'), edit_task_path(@task) %> |
-<%= link_to t('tasks.show.Back'), tasks_path %>
+<div class = 'info_back'>
+  <%= link_to t('tasks.show.Edit'), edit_task_path(@task) %> |
+  <%= link_to t('tasks.show.Back'), tasks_path %>
+</div>

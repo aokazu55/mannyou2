@@ -1,6 +1,7 @@
 ja:
   tasks:
     _form:
+      Task_create: "タスクを登録しましょう。"
       error: "エラー"
       title: "タイトル"
       content: "タスク内容"
@@ -25,6 +26,7 @@ ja:
       Show: "詳細"
       Edit: "編集"
       Destroy: "削除"
+      What_to_do: "何をしますか?"
       Are you sure?: "本当に良いですか？"
       New Task: "タスク新規作成"
 
@@ -33,6 +35,7 @@ ja:
       New Task: "新しいタスク"
 
     show:
+      Task_detail: "タスク詳細確認"
       Title: "タイトル"
       Content: "タスク内容"
       Deadline: "完了期限"
