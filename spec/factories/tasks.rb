@@ -4,7 +4,8 @@ FactoryBot.define do
     title { 'test_title' }
     content { 'test_content' }
     deadline { "2020-01-02" }
-    priority { 'test_priority' }
+    priority { '高' }
+    status { '未着手'}
   end
 
   factory :new_task, class: Task do
@@ -12,6 +13,7 @@ FactoryBot.define do
     title { 'test_title2' }
     content { 'test_content2' }
     deadline { "2020-01-02" }
-    priority { 'test_priority2' }
+    priority { '低' }
+    status { '着手中'}
   end
 end

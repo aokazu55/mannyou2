@@ -3,6 +3,7 @@ class Task < ApplicationRecord
   validates :content, presence: true
   validates :deadline, presence: true
   validates :priority, presence: true
+  validates :status, presence: true
 
   scope :sort_deadline_asc, -> {order(deadline: :asc)}
   scope :sort_priority_asc, -> {order(priority: :asc)}
