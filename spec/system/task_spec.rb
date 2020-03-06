@@ -74,18 +74,6 @@ RSpec.describe 'タスク管理機能', type: :system do
     end
 
   describe "タスク一覧画面" do
-    context '検索ボタンを押した場合' do
-      it '検索フォームに入力されているものだけが表示されること' do
-        @task3 = FactoryBot.create(:task, title: '検索テスト')
-        visit tasks_path
-        fill_in "【タイトルで検索】", with: '検索テスト'
-        click_on '検索はコチラ'
-        expect(page).to have_content '何もやってないタスク・・・'
-      end
-    end
-  end
-
-  describe "タスク一覧画面" do
     context '優先順位でソートするボタンを押した場合' do
       it '優先順位の降順に並んでいること' do
         @task4 = FactoryBot.create(:task, title: "優先順位通りに並ぶ？", content: 'どうかな？？', status: '着手中', priority: '高')
