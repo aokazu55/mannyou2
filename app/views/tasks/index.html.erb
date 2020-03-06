@@ -3,8 +3,8 @@
 <h1><%= t '.Tasks' %></h1>
 
 <div class = 'info_sort'>
-  <%= link_to "　①：完了期限でソート　", tasks_path(sort_deadline: "true") %>
-  <%= link_to "　②：優先順位でソート　", tasks_path(sort_priority: "true") %>
+  <%= link_to "【完了期限でソート】", tasks_path(sort_deadline: "true") %>
+  <%= link_to "【優先順位でソート】", tasks_path(sort_priority: "true") %>
 </div>
 
 <div class = 'info_form'>
@@ -44,9 +44,9 @@
         <td class = 'td3'><%= task.deadline %></td>
         <td class = 'td4'><%= task.priority %></td>
         <td class = 'td5'><%= task.status %></td>
-        <td class = 'td6'><%= link_to t('tasks.index.Show'), task %></td>
-        <td class = 'td7'><%= link_to t('tasks.index.Edit'), edit_task_path(task) %></td>
-        <td class = 'td8'><%= link_to t('tasks.index.Destroy'), task, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td class = 'td6'><%= link_to t('tasks.index.Show'), task_path(task.id) %></td>
+        <td class = 'td7'><%= link_to t('tasks.index.Edit'), edit_task_path(task.id) %></td>
+        <td class = 'td8'><%= link_to t('tasks.index.Destroy'), task, method: :delete, data: { confirm: 'Are_you_sure?' } %></td>
       </tr>
     <% end %>
   </tbody>

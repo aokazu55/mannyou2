@@ -60,7 +60,6 @@ label {
   vertical-align: middle;
   font-size: 13px;
   font-weight: bold;
-
 }
 
 div {
@@ -71,14 +70,14 @@ div {
 
 form {
   display: inline-flex;
-  vertical-align: middle;
+  height: 36px;
+  padding-top: 3px;
 }
 
 .info_sort {
   background-color: #337AB7;
-  height: 24px;
-  position: absolute;
-  top: 68%;
+  height: 36px;
+  padding-top: 7px;
 }
 
 .info_form {
@@ -114,6 +113,7 @@ textarea {
 
 .info_back, .info_editback {
   height: 70px;
+  padding-top: 30px;
 }
 
 .info_back a, {
@@ -123,7 +123,7 @@ textarea {
   margin-left: 15px;
   padding: 10px;
   position: absolute;
-  top: 70%;
+  top: 600px;
   background-color: #eae8e1;
   color: #337AB7;
 }
@@ -148,6 +148,8 @@ table {
 
 #notice {
   color: green;
+  font-weight: bold;
+  font-size: 13px;
 }
 
 .field_with_errors {

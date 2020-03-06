@@ -2,7 +2,7 @@
 <%= form_with(model: task, local: true) do |form| %>
   <% if task.errors.any? %>
     <div id="error_explanation">
-      <h2><%= pluralize(task.errors.count, "error") %> prohibited this task from being saved:</h2>
+      <h2><%= pluralize(task.errors.count, "error") %> prohibited_this_task_from_being_saved:</h2>
 
       <ol>
       <% task.errors.full_messages.each do |message| %>
