@@ -72,6 +72,7 @@ RSpec.describe 'タスク管理機能', type: :system do
         expect(page).to have_content '超過'
       end
     end
+  end
 
   describe "タスク一覧画面" do
     context '優先順位でソートするボタンを押した場合' do
