@@ -1,3 +1,133 @@
 // Place all the styles related to the tasks controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+
+//------ 以下、_form用のCSS------
+
+.ul_form {
+  height: 500px;
+  width: 1200px;
+}
+
+.field_title {
+  width: 1000px;
+  height: 75px;
+  list-style-position: inside;
+}
+
+.field_title label{
+  font-size: 20px;
+  font-weight: bold;
+  list-style-position: inside;
+}
+
+#task_title, #task_content, #task_deadline, #task_priority, #task_status, {
+  width: 300px;
+  height: 25px;
+  margin-left: 10px;
+  margin-right: 20px;
+  margin-top: 3px;
+}
+
+#task_content {
+  width: 500px;
+}
+
+#task_priority, #task_status, {
+  width: 100px;
+}
+
+#task_deadline {
+  width: 200px;
+  text-align: right;
+}
+
+.field_content {
+  width: 1000px;
+  height: 75px;
+  list-style-position: inside;
+}
+
+.field_content label {
+  font-size: 20px;
+  font-weight: bold;
+  list-style-position: inside;
+}
+
+.field_deadline {
+  width: 1000px;
+  height: 75px;
+  list-style-position: inside;
+  margin-top: 20px;
+}
+
+.field_deadline label {
+  font-size: 20px;
+  font-weight: bold;
+  list-style-position: inside;
+  text-align: right;
+
+}
+
+.field_priority {
+  width: 1000px;
+  height: 75px;
+  list-style-position: inside;
+}
+
+.field_priority label {
+  font-size: 20px;
+  font-weight: bold;
+  list-style-position: inside;
+}
+
+.field_status {
+  width: 1000px;
+  height: 75px;
+  list-style-position: inside;
+}
+
+.field_status label {
+  font-size: 20px;
+  font-weight: bold;
+  list-style-position: inside;
+}
+
+.actions {
+  width: 1000px;
+  height: 30px;
+  margin-top: 10px;
+  margin-left: 80px;
+  font-size: 18px;
+  font-weight: bold;
+  color: #337AB7;
+}
+
+li {
+  margin-top: 15px;
+}
+
+select {
+  text-align: center;
+  font-weight: bold;
+}
+
+//------ 以下、show用のCSS------
+
+.show_title, .show_content, .show_deadline, .show_priority, .show_status {
+  font-size: 20px;
+  margin: 70px;
+  border-bottom: 1px;
+  border-color: #474a4d;
+}
+
+.info_editback a {
+ height: 40px;
+ font-size: 25px;
+ margin: 10px;
+ padding: 15px;
+
+ background-color: #eae8e1;
+ color: #337AB7;
+}

@@ -19,8 +19,20 @@ pre {
   font-size: 11px;
 }
 
+h1 {
+  background-color: white;
+  font-size: 50px;
+  font-weight: bold;
+  margin: 10px 5px;
+  color: #337AB7;
+}
+
 a {
-  color: #000;
+  color: black;
+  font-size: 13px;
+  font-weight: bold;
+  text-align: center;
+  vertical-align: middle;
 
   &:visited {
     color: #666;
@@ -33,11 +45,21 @@ a {
 }
 
 th {
-  padding-bottom: 5px;
+  padding: 10px;
+  font-size: 15px;
+  text-align: center;
+  background-color: #337AB7;
+  color: white;
 }
 
 td {
-  padding: 0 5px 7px;
+  padding: 15px;
+}
+
+label {
+  vertical-align: middle;
+  font-size: 13px;
+  font-weight: bold;
 }
 
 div {
@@ -46,8 +68,88 @@ div {
   }
 }
 
+form {
+  display: inline-flex;
+  height: 36px;
+  padding-top: 3px;
+}
+
+.info_sort {
+  background-color: #337AB7;
+  height: 36px;
+  padding-top: 7px;
+}
+
+.info_form {
+  background-color: #eae8e1;
+  height: 36px;
+  width: 100%;
+  color: #337AB7;
+}
+
+.info_title_select, .info_status_select {
+  height: 23px;
+  margin-right: 5px;
+  font-weight: bold;
+  text-align: center;
+  vertical-align: middle;
+}
+
+input {
+  height: 23px;
+  padding-left: 10px;
+  padding-right: 10px;
+  font-weight: bold;
+  text-align: left;
+  margin-left: 10px;
+}
+
+textarea {
+  padding-left: 10px;
+  padding-right: 10px;
+  font-weight: bold;
+  text-align: left;
+}
+
+.info_back, .info_editback {
+  height: 70px;
+  padding-top: 30px;
+}
+
+.info_back a, {
+  height: 40px;
+  font-size: 25px;
+  margin: 20px;
+  margin-left: 15px;
+  padding: 10px;
+  position: absolute;
+  top: 600px;
+  background-color: #eae8e1;
+  color: #337AB7;
+}
+
+.info_sort a {
+  color: white;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 3px 3px;
+  outline-color: #474a4d;
+  margin-top: 25px;
+  margin-left: 30px;
+  width: 80%
+}
+
+.td3, .td4, .td5, .td6, .td7, .td8 {
+  text-align: center;
+  vertical-align: middle;
+}
+
 #notice {
   color: green;
+  font-weight: bold;
+  font-size: 13px;
 }
 
 .field_with_errors {
@@ -76,9 +178,6 @@ div {
   ul li {
     font-size: 12px;
     list-style: square;
+    vertical-align: middle;
   }
-}
-
-label {
-  display: block;
 }

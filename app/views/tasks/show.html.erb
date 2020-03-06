@@ -1,24 +1,35 @@
 <p id="notice"><%= notice %></p>
 
-<p>
-  <strong><%= t '.Title' %>:</strong>
-  <%= @task.title %>
-</p>
+<h1><%= t '.Task_detail' %></h1>
 
-<p>
-  <strong><%= t '.Content' %>:</strong>
-  <%= @task.content %>
-</p>
+<div class = show_group>
+  <p class = 'show_title'>
+    <strong><%= t '.Title' %> :</strong>
+    <%= @task.title %>
+  </p>
 
-<p>
-  <strong><%= t '.Deadline' %>:</strong>
-  <%= @task.deadline %>
-</p>
+  <p class = 'show_content'>
+    <strong><%= t '.Content' %> :</strong>
+    <%= @task.content %>
+  </p>
 
-<p>
-  <strong><%= t '.Priority' %>:</strong>
-  <%= @task.priority %>
-</p>
+  <p class = 'show_deadline'>
+    <strong><%= t '.Deadline' %> :</strong>
+    <%= @task.deadline %>
+  </p>
 
-<%= link_to t('tasks.show.Edit'), edit_task_path(@task) %> |
-<%= link_to t('tasks.show.Back'), tasks_path %>
+  <p class = 'show_priority'>
+    <strong><%= t '.Priority' %> :</strong>
+    <%= @task.priority %>
+  </p>
+
+  <p class = 'show_status'>
+    <strong><%= t '.Status' %> :</strong>
+    <%= @task.status %>
+  </p>
+</div>
+
+<div class = 'info_editback'>
+  <%= link_to t('tasks.show.Edit'), edit_task_path(@task) %>
+  <%= link_to t('tasks.show.Back'), tasks_path %>
+</div>

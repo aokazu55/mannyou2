@@ -1,12 +1,15 @@
 ja:
   tasks:
     _form:
+      Task_create: "タスクを登録しましょう。"
       error: "エラー"
       title: "タイトル"
       content: "タスク内容"
       deadline: "完了期限"
       priority: "優先順位"
+      status: "着手状況"
       user_id: "ユーザーID"
+      Are_you_sure?: "本当に削除しても良いですか？"
 
     edit:
       Editing Task: "タスク編集"
@@ -19,10 +22,12 @@ ja:
       Content: "タスク内容"
       Deadline: "完了期限"
       Priority: "優先順位"
+      Status: "着手状況"
       User: "ユーザー"
       Show: "詳細"
       Edit: "編集"
       Destroy: "削除"
+      What_to_do: "何をしますか?"
       Are you sure?: "本当に良いですか？"
       New Task: "タスク新規作成"
 
@@ -31,10 +36,12 @@ ja:
       New Task: "新しいタスク"
 
     show:
+      Task_detail: "タスク詳細確認"
       Title: "タイトル"
       Content: "タスク内容"
       Deadline: "完了期限"
       Priority: "優先順位"
+      Status: "着手状況"
       User: "ユーザー"
       Back: "戻る"
       Edit: "編集"

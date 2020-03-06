@@ -1,0 +1,7 @@
+ja:
+  views:
+    pagination:
+      views.pagination.first: "1ページ目へ進む"
+      views.pagination.previous: "プレビュー"
+      views.pagination.next: "次ページへ進む"
+      views.pagination.last: "最終ページへ進む"

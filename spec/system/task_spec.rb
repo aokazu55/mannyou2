@@ -1,10 +1,11 @@
 require 'rails_helper'
+require 'byebug'
+
 RSpec.describe 'タスク管理機能', type: :system do
-  before do
-    # あらかじめタスク一覧のテストで使用するためのタスクを二つ作成する
-    FactoryBot.create(:task)
-    FactoryBot.create(:new_task)
-  end
+  # before do
+  #   FactoryBot.create(:task)
+  #   FactoryBot.create(:new_task)
+  # end
 
   describe 'タスク一覧画面' do
     context 'タスクを作成した場合' do
@@ -20,15 +21,17 @@ RSpec.describe 'タスク管理機能', type: :system do
     context '必要項目を入力して、createボタンを押した場合' do
       it 'データが保存されること' do
         visit new_task_path
-        fill_in 'task_title', with: 'test-title'
-        fill_in 'task_content', with: 'test-content'
+        fill_in 'task_title', with: 'test_title'
+        fill_in 'task_content', with: 'test_content'
         fill_in 'task_deadline', with: Date.new(2020, 12 ,12)
-        fill_in 'task_priority', with: 'test-priority'
+        select '高', from: 'task_priority'
+        select '未着手', from: 'task_status'
         click_on '登録する'
-        expect(page).to have_content 'test-title'
-        expect(page).to have_content 'test-content'
+        expect(page).to have_content 'test_title'
+        expect(page).to have_content 'test_content'
         expect(page).to have_content "2020-12-12"
-        expect(page).to have_content 'test-priority'
+        expect(page).to have_content "高"
+        expect(page).to have_content "未着手"
       end
     end
   end
@@ -36,13 +39,14 @@ RSpec.describe 'タスク管理機能', type: :system do
   describe 'タスク詳細画面' do
      context '任意のタスク詳細画面に遷移した場合' do
        it '該当タスクの内容が表示されたページに遷移すること' do
-         task = Task.create(id: 3, title: 'test-title', content: 'test-content', deadline: "2020-12-12", priority: 'test-priority')
+         task = Task.create(title: 'test_title', content: 'test_content', deadline: "2020-12-12", priority: '高', status: '未着手')
          visit task_path(task)
          visit task_path(task.id)
-         expect(page).to have_content 'test-title'
-         expect(page).to have_content 'test-content'
+         expect(page).to have_content 'test_title'
+         expect(page).to have_content 'test_content'
          expect(page).to have_content "2020-12-12"
-         expect(page).to have_content 'test-priority'
+         expect(page).to have_content '高'
+         expect(page).to have_content '未着手'
        end
      end
   end
@@ -54,6 +58,30 @@ RSpec.describe 'タスク管理機能', type: :system do
         visit tasks_path
         task_list = page.all('tr')
         expect(task_list[1]).to have_content 'new_task'
+      end
+    end
+  end
+
+  describe "タスク一覧画面" do
+    context '終了期限でソートするをクリックした場合' do
+      it 'タスクが完了期限順に並んでいること' do
+        @task2 = FactoryBot.create(:task, title: "期限を超過したタスク", content: '期限を超過したタスク', created_at: Date.today-7, deadline: Date.today-7, status: '未着手', priority: '高')
+        visit tasks_path
+        click_on '【完了期限でソート】'
+        click_on '【完了期限でソート】', match: :first
+        expect(page).to have_content '超過'
+      end
+    end
+  end
+
+  describe "タスク一覧画面" do
+    context '優先順位でソートするボタンを押した場合' do
+      it '優先順位の降順に並んでいること' do
+        @task4 = FactoryBot.create(:task, title: "優先順位通りに並ぶ？", content: 'どうかな？？', status: '着手中', priority: '高')
+        visit tasks_path
+        click_on '【優先順位でソート】'
+        click_on '【優先順位でソート】', match: :first
+        expect(page).to have_content '優先順位'
       end
     end
   end

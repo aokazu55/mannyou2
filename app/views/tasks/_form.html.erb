@@ -1,37 +1,45 @@
+
 <%= form_with(model: task, local: true) do |form| %>
   <% if task.errors.any? %>
     <div id="error_explanation">
-      <h2><%= pluralize(task.errors.count, "error") %> prohibited this task from being saved:</h2>
+      <h2><%= pluralize(task.errors.count, "error") %> prohibited_this_task_from_being_saved:</h2>
 
-      <ul>
+      <ol>
       <% task.errors.full_messages.each do |message| %>
         <li><%= message %></li>
       <% end %>
-      </ul>
+      </ol>
     </div>
   <% end %>
 
-  <div class="field">
-    <%= form.label :title %>
-    <%= form.text_field :title %>
-  </div>
+  <ol class = 'ul_form'>
+    <div class="field_title">
+      <li><%= form.label :title %></li>
+      <%= form.text_field :title %>
+    </div>
 
-  <div class="field">
-    <%= form.label :content %>
-    <%= form.text_area :content %>
-  </div>
+    <div class="field_content">
+      <li><%= form.label :content %></li>
+      <%= form.text_area :content %>
+    </div>
 
-  <div class="field">
-    <%= form.label :deadline %>
-    <%= form.date_field :deadline %>
-  </div>
+    <div class="field_deadline">
+      <li><%= form.label :deadline %></li>
+      <%= form.date_field :deadline %>
+    </div>
 
-  <div class="field">
-    <%= form.label :priority %>
-    <%= form.text_field :priority %>
-  </div>
+    <div class="field_priority">
+      <li><%= form.label :priority %></li>
+      <%= form.select :priority, [["高", "高"],["中", "中"],["低", "低"]] %>
+    </div>
 
-  <div class="actions">
-    <%= form.submit %>
-  </div>
+    <div class="field_status">
+      <li><%= form.label :status %></li>
+      <%= form.select :status, [["未着手", "未着手"],["着手中", "着手中"],["完了", "完了"]] %>
+    </div>
+
+    <div class="actions">
+      <%= form.submit %>
+    </div>
+  </ol>
 <% end %>
