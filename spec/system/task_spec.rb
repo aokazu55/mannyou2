@@ -27,6 +27,16 @@ RSpec.describe 'タスク管理機能', type: :system do
         expect(task_list[1]).to have_content 'task'
       end
     end
+
+    context '終了期限でソートするをクリックした場合' do
+      it 'タスクが完了期限順に並んでいること' do
+        @task2 = FactoryBot.create(:task, title: "期限を超過したタスク", content: '期限を超過したタスク', created_at: Date.today-7, deadline: Date.today-7, status: '未着手', priority: '高')
+        visit tasks_path
+        click_on '【完了期限でソート】'
+        click_on '【完了期限でソート】', match: :first
+        expect(page).to have_content '超過'
+      end
+    end
   end
 
   describe 'ソート・検索機能' do
@@ -77,18 +87,6 @@ RSpec.describe 'タスク管理機能', type: :system do
         expect(page).to have_content '2020-11-30'
         expect(page).to have_content "高"
         expect(page).to have_content "未着手"
-      end
-    end
-  end
-
-  describe "タスク一覧画面" do
-    context '終了期限でソートするをクリックした場合' do
-      it 'タスクが完了期限順に並んでいること' do
-        @task2 = FactoryBot.create(:task, title: "期限を超過したタスク", content: '期限を超過したタスク', created_at: Date.today-7, deadline: Date.today-7, status: '未着手', priority: '高')
-        visit tasks_path
-        click_on '【完了期限でソート】'
-        click_on '【完了期限でソート】', match: :first
-        expect(page).to have_content '超過'
       end
     end
   end
