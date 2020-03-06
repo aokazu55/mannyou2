@@ -1,6 +1,6 @@
 {
   "name": "mannyou2",
-  "license": "UNLICENSED"
+  "license": "UNLICENSED",
   "private": true,
   "dependencies": {
     "bootstrap": "3",
