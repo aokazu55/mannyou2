@@ -10,6 +10,30 @@
   </head>
 
   <body>
+  <header>
+    <h1 class="bg-dark text-white py-1"><%= link_to 'Owntask', tasks_path %></h1>
+    <% flash.each do |message_type, message| %>
+      <div class="alert alert-<%= message_type %>">
+        <%= message %>
+      </div>
+    <% end %>
+  </header>
+    <% if logged_in? %>
+      <%= current_user.name %>
+      <%= link_to t('.user_page'), user_path(current_user.id) %>：
+      <% if current_user.admin? %>
+        <%= link_to t('.user_manage'), admin_users_path %>：
+        <%= link_to t('.new_account'), new_admin_user_path %>：
+      <% end %>
+      <%= link_to t('.label_list'), labels_path %>：
+      <%= link_to t('.logged_out'), session_path(current_user.id), method: :delete %>
+    <% else %>
+      <%= link_to t('.new_account'), new_user_path %>：
+      <%= link_to t('.logged_in'), new_session_path %>
+    <% end %>
     <%= yield %>
   </body>
+  <footer class="footer mt-auto py-3 bg-dark text-white">
+    © kazuyasu.aoki
+  </footer>
 </html>
