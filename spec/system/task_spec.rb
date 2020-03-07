@@ -21,14 +21,13 @@ RSpec.describe 'タスク管理機能', type: :system do
 
     context '複数のタスクを作成した場合' do
       it 'タスクが作成日時の降順に並んでいること' do
-        task = FactoryBot.create(:task, title: 'task')
         visit tasks_path
         task_list = page.all('tr')
         expect(task_list[1]).to have_content 'task'
       end
     end
 
-    context '終了期限でソートするをクリックした場合' do
+    context '【完了期限でソート】をクリックした場合' do
       it 'タスクが完了期限順に並んでいること' do
         @task2 = FactoryBot.create(:task, title: "期限を超過したタスク", content: '期限を超過したタスク', created_at: Date.today-7, deadline: Date.today-7, status: '未着手', priority: '高')
         visit tasks_path
