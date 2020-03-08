@@ -5,6 +5,8 @@ class TasksController < ApplicationController
   def index
     if logged_in?
       @tasks = Task.page(params[:page]).per(PER).where(user_id: current_user.id)
+    else
+      redirect_to sessions_new_path
     end
 
       if params[:sort_deadline]
