@@ -1,0 +1,8 @@
+ja:
+  sessions:
+    new:
+      Back: '戻る'
+      # Login Page: "ログイン"
+      logged_in: "ログインはコチラ"
+      email: "メールアドレス"
+      password_digest: "パスワード"

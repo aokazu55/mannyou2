@@ -5,6 +5,8 @@ class Task < ApplicationRecord
   validates :priority, presence: true
   validates :status, presence: true
 
+  belongs_to :user, foreign_key: "user_id"
+
   scope :sort_deadline_asc, -> {order(deadline: :asc)}
   scope :sort_priority_desc, -> {order(priority: :desc)}
   scope :title_search, -> (title){ where("title LIKE ?", "%#{title}%") }

@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  # get 'sessions/new'
+  get 'sessions/new'
   root 'tasks#index'
   resources :tasks do
     collection do
@@ -11,11 +11,4 @@ Rails.application.routes.draw do
   namespace :admin do
     resources :users
   end
-
-  # root 'sessions#new'
-  # root 'tasks#index'
-  # resources :tasks
-  # resources :users
-  # resources :sessions
-
 end

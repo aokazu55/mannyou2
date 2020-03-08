@@ -1,6 +1,6 @@
 <p id="notice"><%= notice %></p>
 
-<h1>Userpage</h1>
+<h1><%= t '.Userpage' %></h1>
 
 <ul>
   <li><%= @user.name %></li>
@@ -35,8 +35,8 @@
             <td><%= task.priority %></td>
             <td><%= task.status %></td>
             <td><%= @user.name %></td>
-            <td><%= link_to 'edit', edit_task_path(task) %></td>
-            <td><%= link_to 'destroy', task, method: :delete, data: { confirm: '本当に削除してもよろしいですか？' } %></td>
+            <td><%= link_to t('users.show.edit'), edit_task_path(task) %></td>
+            <td><%= link_to t('users.show.destroy'), task, method: :delete, data: { confirm: '本当に削除してもよろしいですか？' } %></td>
           </tr>
         <% end %>
       <tbody>
