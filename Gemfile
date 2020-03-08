@@ -13,6 +13,7 @@ gem 'msgpack'
 gem 'kaminari'
 gem 'bootstrap'
 gem 'jquery-rails'
+gem 'bcrypt', '3.1.11'
 
 gem 'bootsnap', '>= 1.1.0', require: false
 
