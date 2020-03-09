@@ -22,8 +22,8 @@
       <%= f.select :admin, [["public_user", false],["administrator", true]]%>
     <% end %>
 
-    <li><%= f.label :password_digest %></li>
-    <%= f.password_field :password_digest %>
+    <li><%= f.label :password %></li>
+    <%= f.password_field :password %>
 
     <li><%= f.label :password_confirmation %></li>
     <%= f.password_field :password_confirmation %>

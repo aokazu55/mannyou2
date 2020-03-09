@@ -1,7 +1,7 @@
 ja:
   layouts:
     application:
-      Tasks_index: "タスク一覧へ進む"
+      Tasks_index: "自分のタスク一覧へ進む"
       user_page: "ユーザーページ"
       user_manage: "ユーザー管理"
       new_account_create: "新規ユーザー登録"
