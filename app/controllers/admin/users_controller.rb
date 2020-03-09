@@ -1,6 +1,5 @@
 class Admin::UsersController < ApplicationController
   before_action :ensure_current_user_admin
-  # before_action :admin_user?
   before_action :set_users, only: [:show, :destroy, :edit, :update]
   before_action :before_destroy, only: [:destroy]
 
@@ -60,10 +59,6 @@ class Admin::UsersController < ApplicationController
       flash[:danger] = "管理者権限がありません"
     end
   end
-
-  # def admin_user?
-  #   raise Forbidden unless current_user.admin?
-  # end
 
   def before_destroy
     if @user.admin == true && @user == current_user

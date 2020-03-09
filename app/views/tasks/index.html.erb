@@ -42,9 +42,9 @@
         <td class = 'td3'><%= task.deadline %></td>
         <td class = 'td4'><%= task.priority %></td>
         <td class = 'td5'><%= task.status %></td>
-        <td class = 'td6'><%= link_to t('tasks.index.Show'), task_path(task.id) %></td>
-        <td class = 'td7'><%= link_to t('tasks.index.Edit'), edit_task_path(task.id) %></td>
-        <td class = 'td8'><%= link_to t('tasks.index.Destroy'), task, method: :delete, data: { confirm: 'Are_you_sure?' } %></td>
+        <td class = 'td6'><%= link_to t('Show'), task_path(task.id) %></td>
+        <td class = 'td7'><%= link_to t('Edit'), edit_task_path(task.id) %></td>
+        <td class = 'td8'><%= link_to t('Destroy'), task, method: :delete, data: { confirm: 'Are_you_sure?' } %></td>
       </tr>
     <% end %>
   </tbody>
