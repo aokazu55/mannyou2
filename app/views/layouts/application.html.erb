@@ -9,9 +9,9 @@
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
 
-  <body>
+  <body class = "user_body">
     <header>
-      <h1 class="bg-dark text-white py-1"><%= link_to t('.Happy_Tasks'), tasks_path %></h1>
+      <h1 class="bg-dark text-white py-1"><%= link_to t('.Tasks_index'), tasks_path %></h1>
 
       <% flash.each do |message_type, message| %>
         <div class="alert alert-<%= message_type %>">
@@ -21,12 +21,12 @@
     </header>
 
     <% if logged_in? %>
-      <%= current_user.name %>
+      <p class = "current_user_p">現在のログインユーザー：<%= current_user.name %></p>
       <%= link_to t('.user_page'), user_path(current_user.id) %>：
 
       <% if current_user.admin? %>
         <%= link_to t('.user_manage'), admin_users_path %>：
-        <%= link_to t('.new_admin_account'), new_admin_user_path %>：
+        <%= link_to t('.new_account_create'), new_admin_user_path %>：
       <% end %>
 
       <%= link_to t('.logged_out'), session_path(current_user.id), method: :delete %>

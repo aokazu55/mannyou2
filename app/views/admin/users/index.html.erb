@@ -1,4 +1,4 @@
-<h1>Index_Administraters</h1>
+<h1>Administrater_View</h1>
 <div class="container">
   <div class="table-responsive">
     <table class ="table table-sm text-center table-striped">
@@ -7,6 +7,7 @@
           <th><%= t '.User_id' %></th>
           <th><%= t '.Administrator_name' %></th>
           <th><%= t '.count_tasks' %></th>
+          <th><%= t '.what_have_to_do' %></th>
           <th><%= t '.authority' %></th>
           <th><%= t '.destroy' %></th>
         </tr>
@@ -21,6 +22,7 @@
             <td><%= user.name %></td>
           <% end %>
           <td><%= user.tasks.size %></td>
+          <td><%= link_to t('users.index.Show'), edit_admin_user_path(user) %></td>
           <td><%= link_to t('users.index.Edit'), edit_admin_user_path(user) %></td>
           <td><%= link_to t('users.index.Destroy'),[:admin, user], method: :delete, data: { confirm: 'このアカウントを削除しますか？' } %></td>
         </tr>

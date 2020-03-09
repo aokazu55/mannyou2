@@ -10,22 +10,24 @@
   </div>
   <% end %>
 
-  <%= f.label :name %>
-  <%= f.text_field :name %>
+  <ol class = 'user_ul_form'>
+    <li><%= f.label :name %></li>
+    <%= f.text_field :name %>
 
-  <%= f.label :email %>
-  <%= f.email_field :email %>
+    <li><%= f.label :email %></li>
+    <%= f.email_field :email %>
 
-  <% if current_user.admin? %>
-    <%= f.label :admin %>
-    <%= f.select :admin, [["public_user", false],["administrator", true]]%>
-  <% end %>
+    <% if current_user.admin? %>
+      <li><%= f.label :admin %></li>
+      <%= f.select :admin, [["public_user", false],["administrator", true]]%>
+    <% end %>
 
-  <%= f.label :password_digest %>
-  <%= f.password_field :password_digest %>
+    <li><%= f.label :password_digest %></li>
+    <%= f.password_field :password_digest %>
 
-  <%= f.label :password_confirmation %>
-  <%= f.password_field :password_confirmation %>
+    <li><%= f.label :password_confirmation %></li>
+    <%= f.password_field :password_confirmation %>
 
-  <%= f.submit %>
+    <li><%= f.submit %></li>
+  </ol>
 <% end %>

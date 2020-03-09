@@ -1,10 +1,11 @@
 class Admin::UsersController < ApplicationController
   before_action :ensure_current_user_admin
+  # before_action :admin_user?
   before_action :set_users, only: [:show, :destroy, :edit, :update]
   before_action :before_destroy, only: [:destroy]
 
   def index
-    @users = User.all.includes(:tasks).order(id: "ASC")
+    @users = User.includes(:tasks).all.order(created_at: :desc)
   end
 
   def new
@@ -60,10 +61,15 @@ class Admin::UsersController < ApplicationController
     end
   end
 
+  # def admin_user?
+  #   raise Forbidden unless current_user.admin?
+  # end
+
   def before_destroy
     if @user.admin == true && @user == current_user
       redirect_to admin_users_path
       flash[:danger] = "管理者自身は削除できません"
     end
   end
+
 end

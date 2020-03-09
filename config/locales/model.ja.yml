@@ -16,6 +16,7 @@ ja:
       user:
         name: 名前
         email: メールアドレス
+        admin: ユーザー種別
         current_password: 現在のパスワード
         password_digest: パスワード
         password_confirmation: 確認用パスワード

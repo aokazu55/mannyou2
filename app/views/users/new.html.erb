@@ -2,4 +2,6 @@
 
 <%= render 'form', user: @user %>
 
-<%= link_to t('users.new.back'), users_path %>
+<div class = "back_to_login">
+  <%= link_to t('users.new.back'), sessions_new_path %>
+</div>

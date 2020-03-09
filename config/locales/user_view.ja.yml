@@ -17,7 +17,6 @@ ja:
       logged_in: "Login"
 
     show:
-      # Userpage: "ユーザーページ"
       New_User: "新規ユーザー"
       users.new.back: "戻る"
       Edit: "編集"
