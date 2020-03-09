@@ -13,11 +13,12 @@ gem 'msgpack'
 gem 'kaminari'
 gem 'bootstrap'
 gem 'jquery-rails'
+gem 'bcrypt', '3.1.11'
 
 gem 'bootsnap', '>= 1.1.0', require: false
 
 group :development, :test do
-  gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
+  gem 'byebug'
   gem 'rspec-rails', '~> 3.8'
   gem 'factory_bot_rails'
   gem 'spring'
@@ -35,6 +36,7 @@ end
 group :test do
   gem 'capybara', '>= 2.15'
   gem 'webdrivers'
+  gem 'database_cleaner'
 end
 
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]

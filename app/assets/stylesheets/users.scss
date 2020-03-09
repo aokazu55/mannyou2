@@ -1,3 +1,38 @@
 // Place all the styles related to the users controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+
+.footer_copy {
+  position: relative;
+  top: 500px;
+}
+
+.back_to_login {
+  position: relative;
+  top: 60px;
+  margin-left: 10px;
+}
+
+.user_ul_form {
+  height: 500px;
+  width: 1200px;
+}
+
+.user_actions {
+  position: absolute;
+  top: 250px;
+}
+
+.current_user_p {
+  font-weight: bold;
+  font-size: 15px;
+  text-align: center;
+  margin-top: 10px;
+  background-color: #eae8e1;
+  width: 300px;
+}
+
+.table-responsive {
+  text-align: center;
+}

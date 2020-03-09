@@ -1,5 +1,3 @@
-<p id="notice"><%= notice %></p>
-
 <h1><%= t '.Tasks' %></h1>
 
 <div class = 'info_sort'>
@@ -27,11 +25,11 @@
 <table border = '1'>
   <thead class = 'info_index'>
     <tr>
-      <th><%= t '.Title' %></th>
-      <th><%= t '.Content' %></th>
-      <th><%= t '.Deadline' %></th>
-      <th><%= t '.Priority' %></th>
-      <th><%= t '.Status' %></th>
+      <th scope><%= t '.Title' %></th>
+      <th scope><%= t '.Content' %></th>
+      <th scope><%= t '.Deadline' %></th>
+      <th scope><%= t '.Priority' %></th>
+      <th scope><%= t '.Status' %></th>
       <th colspan="3"><%= t '.What_to_do' %></th>
     </tr>
   </thead>
@@ -44,9 +42,9 @@
         <td class = 'td3'><%= task.deadline %></td>
         <td class = 'td4'><%= task.priority %></td>
         <td class = 'td5'><%= task.status %></td>
-        <td class = 'td6'><%= link_to t('tasks.index.Show'), task_path(task.id) %></td>
-        <td class = 'td7'><%= link_to t('tasks.index.Edit'), edit_task_path(task.id) %></td>
-        <td class = 'td8'><%= link_to t('tasks.index.Destroy'), task, method: :delete, data: { confirm: 'Are_you_sure?' } %></td>
+        <td class = 'td6'><%= link_to t('Show'), task_path(task.id) %></td>
+        <td class = 'td7'><%= link_to t('Edit'), edit_task_path(task.id) %></td>
+        <td class = 'td8'><%= link_to t('Destroy'), task, method: :delete, data: { confirm: 'Are_you_sure?' } %></td>
       </tr>
     <% end %>
   </tbody>

@@ -1,0 +1,33 @@
+<%= form_with(model: [:admin, @user], local: true) do |f| %>
+  <% if @user.errors.any? %>
+  <div id="error_explanation">
+    <h2><%= pluralize(@user.errors.count, "件のエラーがあります。") %></h2>
+    <ul>
+    <% @user.errors.full_messages.each do |m| %>
+      <li><%= m %></li>
+    <% end %>
+    </ul>
+  </div>
+  <% end %>
+
+  <ol class = 'user_ul_form'>
+    <li><%= f.label :name %></li>
+    <%= f.text_field :name %>
+
+    <li><%= f.label :email %></li>
+    <%= f.email_field :email %>
+
+    <% if current_user.admin? %>
+      <li><%= f.label :admin %></li>
+      <%= f.select :admin, [["public_user", false],["administrator", true]]%>
+    <% end %>
+
+    <li><%= f.label :password %></li>
+    <%= f.password_field :password %>
+
+    <li><%= f.label :password_confirmation %></li>
+    <%= f.password_field :password_confirmation %>
+
+    <li><%= f.submit %></li>
+  </ol>
+<% end %>

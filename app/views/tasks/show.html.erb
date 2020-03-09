@@ -1,5 +1,3 @@
-<p id="notice"><%= notice %></p>
-
 <h1><%= t '.Task_detail' %></h1>
 
 <div class = show_group>
@@ -30,6 +28,6 @@
 </div>
 
 <div class = 'info_editback'>
-  <%= link_to t('tasks.show.Edit'), edit_task_path(@task) %>
-  <%= link_to t('tasks.show.Back'), tasks_path %>
+  <%= link_to t('Edit'), edit_task_path(@task) %>
+  <%= link_to t('Back'), tasks_path %>
 </div>

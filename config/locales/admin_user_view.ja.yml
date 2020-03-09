@@ -1,0 +1,13 @@
+ja:
+  admin:
+    users:
+      index:
+        User_id: "ユーザーID"
+        Administrator_name: "ユーザー名"
+        new_admin_account: "新しい管理者"
+        count_tasks: "タスク数"
+        what_have_to_do: "タスク詳細"
+        authority: "編集"
+        Edit: "編集"
+        destroy: "削除"
+        Destroy: "削除"

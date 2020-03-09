@@ -1,19 +1,42 @@
-<p id="notice"><%= notice %></p>
+<h1><%= t '.Userpage' %></h1>
 
-<p>
-  <strong>Name:</strong>
-  <%= @user.name %>
-</p>
+<ul>
+  <li><%= @user.name %></li>
+  <li><%= @user.email %></li>
+  <% if @user.admin? %>
+    <li>administrator</li>
+  <% else %>
+    <li>public_user</li>
+  <% end %>
+</ul>
 
-<p>
-  <strong>Email:</strong>
-  <%= @user.email %>
-</p>
+<% if current_user.admin? %>
+  <div class="table-responsive">
+    <table border = '1'>
+      <thead class = 'user_info_show'>
+        <tr>
+          <th scope><%= t '.Title' %></th>
+          <th scope><%= t '.Content' %></th>
+          <th scope><%= t '.Deadline' %></th>
+          <th scope><%= t '.Priority' %></th>
+          <th scope><%= t '.Status' %></th>
+          <th colspan="2"><%= t '.What_to_do' %></th>
+        </tr>
+      </thead>
 
-<p>
-  <strong>Password:</strong>
-  <%= @user.password %>
-</p>
-
-<%= link_to 'Edit', edit_user_path(@user) %> |
-<%= link_to 'Back', users_path %>
+      <tbody>
+        <% @user.tasks.each do |task| %>
+          <tr class = ".tasks">
+            <td><%= task.title %></td>
+            <td><%= task.content %></td>
+            <td><%= task.deadline %></td>
+            <td><%= task.priority %></td>
+            <td><%= task.status %></td>
+            <td><%= link_to t('edit'), edit_task_path(task) %></td>
+            <td><%= link_to t('destroy'), task, method: :delete, data: { confirm: '本当に削除してもよろしいですか？' } %></td>
+          </tr>
+        <% end %>
+      <tbody>
+    </table>
+  </div>
+<% end %>
