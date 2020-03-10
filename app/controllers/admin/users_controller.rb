@@ -51,10 +51,10 @@ class Admin::UsersController < ApplicationController
   private
 
   def ensure_current_user_admin
-    if logged_in? == false
+    if logged_in?
       redirect_to new_session_path
       flash[:danger] = "ログインしてください"
-    elsif current_user.admin? == false
+    elsif current_user.admin?
       redirect_to tasks_path
       flash[:danger] = "管理者権限がありません"
     end

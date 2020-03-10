@@ -1,5 +1,7 @@
 FactoryBot.define do
   factory :task, class: Task do
+    association :user
+
     title { 'test_task' }
     content { 'test_content' }
     priority { '高' }
@@ -8,6 +10,7 @@ FactoryBot.define do
   end
 
   factory :second_task, class: Task do
+    association :user
     title { 'test_task2' }
     content { 'test_content2' }
     priority { '中' }
@@ -16,6 +19,7 @@ FactoryBot.define do
   end
 
   factory :third_task, class: Task do
+    association :user
     title { 'test_task3' }
     content { 'test_content3' }
     priority { '中' }
@@ -24,6 +28,7 @@ FactoryBot.define do
   end
 
   factory :search_task_01, class: Task do
+    association :user
     title { '検索' }
     content { '検索' }
     priority { '高' }
@@ -32,6 +37,7 @@ FactoryBot.define do
   end
 
   factory :search_task_02, class: Task do
+    association :user
     title { '検索' }
     content { 'ケンサク' }
     priority { '高' }
@@ -40,6 +46,7 @@ FactoryBot.define do
   end
 
   factory :search_task_03, class: Task do
+    association :user
     title { 'けんさく' }
     content { 'けんさく' }
     priority { '低' }

@@ -1,6 +1,7 @@
 require 'rails_helper'
 
 RSpec.describe 'タスク管理機能', type: :model do
+    let(:task) { FactoryBot.create(:task) }
   before do
     FactoryBot.create(:search_task_01)
     FactoryBot.create(:search_task_02)
