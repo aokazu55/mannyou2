@@ -27,19 +27,11 @@ class UsersController < ApplicationController
   private
 
   def ensure_current_user
-    if logged_in?
+    if logged_in? == false
       redirect_to new_session_path
       flash[:danger] = "ログインしてください"
     elsif current_user.id != params[:id].to_i
       redirect_to tasks_path
     end
-  end
-
-  def set_users
-    @user = User.find(params[:id])
-  end
-
-  def user_params
-    params.require(:user).permit(:name, :email, :admin, :password, :password_confirmation)
   end
 end

@@ -9,7 +9,7 @@ class User < ApplicationRecord
   before_validation { email.downcase! }
   before_destroy :do_not_destroy_last_one_admin
 
-  # has_many :tasks, dependent: :destroy
+  has_many :tasks, dependent: :destroy
   # has_many :labels, dependent: :destroy
 
   private
