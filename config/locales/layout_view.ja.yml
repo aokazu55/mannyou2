@@ -4,6 +4,7 @@ ja:
       Tasks_index: "自分のタスク一覧へ進む"
       user_page: "ユーザーページ"
       user_manage: "ユーザー管理"
+      label_list: "ラベルリスト"
       new_account_create: "新規ユーザー登録"
       new_account: "新規ユーザー登録"
       logged_out: "ログアウト"

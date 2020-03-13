@@ -15,6 +15,7 @@
     <table border = '1'>
       <thead class = 'user_info_show'>
         <tr>
+          <th scope><%= t '.Label' %></th>
           <th scope><%= t '.Title' %></th>
           <th scope><%= t '.Content' %></th>
           <th scope><%= t '.Deadline' %></th>
@@ -27,6 +28,9 @@
       <tbody>
         <% @user.tasks.each do |task| %>
           <tr class = ".tasks">
+            <td><% task.labels.each do |label| %>
+            <%= label.label_type %>
+          <% end %></td>
             <td><%= task.title %></td>
             <td><%= task.content %></td>
             <td><%= task.deadline %></td>

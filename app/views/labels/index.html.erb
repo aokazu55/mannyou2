@@ -1,0 +1,45 @@
+<div class="container-lg">
+  <h1>Label_index</h1>
+  <p>
+    <span><%= link_to '【タスク新規登録】', new_task_path %></span>
+    <span><%= link_to '【ラベル新規登録】', new_label_path %></span>
+  </p>
+  <div class="table-responsive">
+    <table class ="table table-sm text-center table-striped">
+      <thead class="thead-dark">
+        <tr>
+          <th>作成したラベル</th><th>編集</th><th>削除</th>
+        </tr>
+      </thead>
+      <tbody>
+
+      <% @labels.each do |l| %>
+        <tr>
+          <td><%= l.label_type %></td>
+          <td><%= link_to 'edit', edit_label_path(l) %></td>
+          <td><%= link_to 'destroy', l, method: :delete, data: { confirm: "ラベルを削除しますか？" } %></td>
+        </tr>
+      <% end %>
+      </tbody>
+    </table>
+  </div>
+
+
+  <hr>
+  <div class="table-responsive">
+    <table class ="table table-sm text-center table-striped">
+      <thead class="label_thead">
+        <tr>
+          <th colspan="3">デフォルトラベル　(編集・削除は出来ません)</th>
+        </tr>
+      </thead>
+      <tbody>
+      <% @labels_default.each do |label_d| %>
+        <tr>
+          <td><%= label_d.label_type %></td>
+        </tr>
+      <% end %>
+      </tbody>
+    </table>
+  </div>
+</div>

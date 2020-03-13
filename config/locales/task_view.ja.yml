@@ -3,6 +3,7 @@ ja:
     _form:
       Task_create: "タスクを登録しましょう。"
       error: "エラー"
+      label: "ラベル"
       title: "タイトル"
       content: "タスク内容"
       deadline: "完了期限"
@@ -18,6 +19,7 @@ ja:
 
     index:
       Tasks: "タスク一覧"
+      Label: "ラベル"
       Title: "タイトル"
       Content: "タスク内容"
       Deadline: "完了期限"
@@ -43,6 +45,6 @@ ja:
       Priority: "優先順位"
       Status: "着手状況"
       User: "ユーザー"
-      Back: "戻る"
-      Edit: "編集"
+      back: "戻る"
+      edit: "編集"
       Destroy: "削除"

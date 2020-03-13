@@ -1,10 +1,11 @@
 <h1><%= t '.Task_detail' %></h1>
 
 <div class = show_group>
-
-  <p class = 'show_Label'>
+  <p class = 'show_label'>
     <strong><%= t '.Label' %> :</strong>
-    <%= @task.status %>
+    <% @task.labels.each do |label| %>
+      <%= label.label_type %>
+    <% end %>
   </p>
 
   <p class = 'show_title'>

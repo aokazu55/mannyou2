@@ -21,7 +21,7 @@
     </header>
 
     <% if logged_in? %>
-      <p class = "current_user_p">現在のログインユーザー：<%= current_user.name %></p>
+      <p class = "current_user_p">【現在のログインユーザー】<%= current_user.name %></p>
       <%= link_to t('.user_page'), user_path(current_user.id) %>：
 
       <% if current_user.admin? %>
@@ -29,6 +29,7 @@
         <%= link_to t('.new_account_create'), new_admin_user_path %>：
       <% end %>
 
+      <%= link_to t('.label_list'), labels_path %>：
       <%= link_to t('.logged_out'), session_path(current_user.id), method: :delete %>
 
     <% else %>

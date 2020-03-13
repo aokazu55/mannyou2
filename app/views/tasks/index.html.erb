@@ -18,19 +18,20 @@
   </div>
 
   <div class = 'info_label_select'>
-    <%= f.label t('.label_search') %>
-    <%= f.collection_select :label_id, label_list, :id, :label_type, include_blank: true %>
+    <%= f.label :label_search, "【ラベルで検索】" %>
+    <%= f.collection_select :label_ids, @labels, :id, :label_type, {include_blank: 'ラベルを選んでください'} %>
   </div>
 
+  <div class = 'info_search'>
     <%= f.hidden_field :search, value: 'true' %>
     <%= f.submit '検索はコチラ' %>
   <% end %>
+  </div>
 </div>
 
 <table border = '1'>
   <thead class = 'info_index'>
     <tr>
-      <th scope><%= t '.Label' %></th>
       <th scope><%= t '.Title' %></th>
       <th scope><%= t '.Content' %></th>
       <th scope><%= t '.Deadline' %></th>
@@ -44,7 +45,7 @@
     <% @tasks.each do |task| %>
     <tr class=".tasks">
     <td class="align-middle">
-      <% task.labellings.each do |label_type| %>
+      <% task.task_labels.each do |label_type| %>
         <%= label_type.label.label_type %><br>
       <% end %>
     </td>

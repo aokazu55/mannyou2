@@ -3,7 +3,8 @@ ja:
     users:
       index:
         User_id: "ユーザーID"
-        Administrator_name: "ユーザー名"
+        label_list: "ラベルリスト"
+        user_name: "ユーザー名"
         new_admin_account: "新しい管理者"
         count_tasks: "タスク数"
         what_have_to_do: "タスク詳細"
