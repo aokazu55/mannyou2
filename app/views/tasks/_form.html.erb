@@ -37,6 +37,18 @@
       <%= form.select :status, [["未着手", "未着手"],["着手中", "着手中"],["完了", "完了"]] %>
     </div>
 
+    <div class="task_label">
+      <% label_list.each do |label| %>
+        <% if action_name == 'new' || action_name == 'create' %>
+          <%= f.check_box :label_ids, { multiple: true, checked: label[:checked], disabled: label[:disabled], include_hidden: false}, label[:id], "" %>
+          <label><%= label.label_type %></label>
+        <% elsif action_name == 'edit' || action_name == 'update' %>
+          <%= f.check_box :label_ids, { multiple: true, checked: @task.label_ids.include?(label.id), disabled: label[:disabled], include_hidden: false}, label[:id], "" %>
+          <label><%= label.label_type %></label>
+        <% end %>
+      <% end %>
+      </div>
+
     <div class="actions">
       <%= form.submit %>
     </div>
