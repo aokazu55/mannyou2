@@ -39,6 +39,7 @@ ja:
 
     show:
       Task_detail: "タスク詳細確認"
+      Label: "ラベル"
       Title: "タイトル"
       Content: "タスク内容"
       Deadline: "完了期限"

@@ -32,6 +32,7 @@
 <table border = '1'>
   <thead class = 'info_index'>
     <tr>
+      <th scope><%= t '.Label' %></th>
       <th scope><%= t '.Title' %></th>
       <th scope><%= t '.Content' %></th>
       <th scope><%= t '.Deadline' %></th>
@@ -43,13 +44,12 @@
 
   <tbody>
     <% @tasks.each do |task| %>
-    <tr class=".tasks">
-    <td class="align-middle">
-      <% task.task_labels.each do |label_type| %>
-        <%= label_type.label.label_type %><br>
-      <% end %>
-    </td>
       <tr>
+        <td class="align-middle">
+          <% task.task_labels.each do |label_type| %>
+            <%= label_type.label.label_type %><br>
+          <% end %>
+        </td>
         <td class = 'td1'><%= task.title %></td>
         <td class = 'td2'><%= task.content %></td>
         <td class = 'td3'><%= task.deadline %></td>

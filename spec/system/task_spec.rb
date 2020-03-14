@@ -61,6 +61,7 @@ RSpec.describe 'タスク管理機能', type: :system do
         click_link '【完了期限でソート】'
         expect(page).to have_content '現在のログインユーザー'
         task_list = page.all('tr')
+        # byebug
         expect(task_list[1]).to have_content '2022-01-05'
         expect(task_list[2]).to have_content '2022-03-09'
         expect(task_list[3]).to have_content '2022-12-09'
@@ -83,6 +84,7 @@ RSpec.describe 'タスク管理機能', type: :system do
         select '未着手', from: 'task[status]'
         click_on '検索はコチラ'
         task_list = page.all('tr')
+        # byebug
         expect(task_list[1]).to have_content '未着手'
         expect(task_list).not_to have_content '着手中'
       end
