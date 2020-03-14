@@ -1,6 +1,13 @@
 <h1><%= t '.Task_detail' %></h1>
 
 <div class = show_group>
+  <p class = 'show_label'>
+    <strong><%= t '.Label' %> :</strong>
+    <% @task.labels.each do |label| %>
+      <%= label.label_type %>
+    <% end %>
+  </p>
+
   <p class = 'show_title'>
     <strong><%= t '.Title' %> :</strong>
     <%= @task.title %>

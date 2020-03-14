@@ -15,16 +15,24 @@
   <div class = 'info_status_select'>
     <%= f.label :status_search, "【着手状況で検索】" %>
     <%= f.select :status, [["",""],["未着手",'未着手'], ["着手中", '着手中'], ["完了", '完了']] %>
-    <%= f.hidden_field :search, value: 'true' %>
-    <%= f.submit '検索はコチラ' %>
   </div>
 
+  <div class = 'info_label_select'>
+    <%= f.label :label_search, "【ラベルで検索】" %>
+    <%= f.collection_select :label_ids, @labels, :id, :label_type, {include_blank: 'ラベルを選んでください'} %>
+  </div>
+
+  <div class = 'info_search'>
+    <%= f.hidden_field :search, value: 'true' %>
+    <%= f.submit '検索はコチラ' %>
   <% end %>
+  </div>
 </div>
 
 <table border = '1'>
   <thead class = 'info_index'>
     <tr>
+      <th scope><%= t '.Label' %></th>
       <th scope><%= t '.Title' %></th>
       <th scope><%= t '.Content' %></th>
       <th scope><%= t '.Deadline' %></th>
@@ -37,6 +45,11 @@
   <tbody>
     <% @tasks.each do |task| %>
       <tr>
+        <td class="align-middle">
+          <% task.task_labels.each do |label_type| %>
+            <%= label_type.label.label_type %><br>
+          <% end %>
+        </td>
         <td class = 'td1'><%= task.title %></td>
         <td class = 'td2'><%= task.content %></td>
         <td class = 'td3'><%= task.deadline %></td>

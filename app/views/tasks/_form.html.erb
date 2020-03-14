@@ -37,6 +37,13 @@
       <%= form.select :status, [["未着手", "未着手"],["着手中", "着手中"],["完了", "完了"]] %>
     </div>
 
+    <div class="field_labels">
+      <% label_list.each do |label| %>
+      <%= form.check_box :label_ids, { multiple: true, checked: label[:checked], disabled: label[:disabled], include_hidden: false}, label[:id]%>
+      <label><%= label.label_type %></label>
+      <% end %>
+    </div>
+
     <div class="actions">
       <%= form.submit %>
     </div>

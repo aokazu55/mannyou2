@@ -23,7 +23,7 @@
 }
 
 #task_title, #task_content, #task_deadline, #task_priority, #task_status, {
-  width: 300px;
+  width: 250px;
   height: 25px;
   margin-left: 10px;
   margin-right: 20px;
@@ -88,6 +88,12 @@
   list-style-position: inside;
 }
 
+.field_labels {
+  width: 1000px;
+  height: 50px;
+  list-style-position: inside;
+}
+
 .field_status label {
   font-size: 20px;
   font-weight: bold;
@@ -115,7 +121,7 @@ select {
 
 //------ 以下、show用のCSS------
 
-.show_title, .show_content, .show_deadline, .show_priority, .show_status {
+.show_label, .show_title, .show_content, .show_deadline, .show_priority, .show_status {
   font-size: 20px;
   margin: 70px;
   border-bottom: 1px;

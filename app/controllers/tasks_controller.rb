@@ -1,10 +1,12 @@
 class TasksController < ApplicationController
   before_action :set_task, only: [:show, :edit, :update, :destroy]
+  # before_action :currentuser_id, only: [:index]
   PER = 5
 
   def index
     if logged_in?
       @tasks = Task.page(params[:page]).per(PER).where(user_id: current_user.id)
+      @labels = Label.where(user_id: current_user.id)
     else
       redirect_to sessions_new_path
     end
@@ -27,6 +29,10 @@ class TasksController < ApplicationController
 
         elsif params[:task][:title].present? && params[:task][:status] == ""
           @tasks = Task.title_search(params[:task][:title]).page(params[:page]).per(PER).where(user_id: current_user.id)
+
+        elsif params[:task][:label_ids].present?
+          #binding.pry
+          @tasks = current_user.tasks.joins(:task_labels).where('task_labels.label_id = ?', params[:task][:label_ids]).page(params[:page]).per(PER)
         end
       end
 
@@ -80,12 +86,13 @@ class TasksController < ApplicationController
   def set_task
     if logged_in?
       @task = Task.find(params[:id])
+      # @labels = Label.where("user_id is null or user_id = ?", current_user.id).order(created_at: "DESC")
     else
       redirect_to new_session_path
     end
   end
 
   def task_params
-    params.require(:task).permit(:title, :content, :deadline, :priority, :status, :user_id)
+    params.require(:task).permit(:title, :content, :deadline, :priority, :status, :user_id, label_ids: [])
   end
 end
