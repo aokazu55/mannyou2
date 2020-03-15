@@ -3,6 +3,7 @@ class TasksController < ApplicationController
   # before_action :currentuser_id, only: [:index]
   PER = 5
 
+
   def index
     if logged_in?
       @tasks = Task.page(params[:page]).per(PER).where(user_id: current_user.id)
@@ -55,7 +56,7 @@ class TasksController < ApplicationController
   end
 
   def create
-    @task = current_user.tasks.build(task_params)
+    @task = current_user.tasks.new(task_params)
     @task.user_id = current_user.id
     if params[:back]
       render :new

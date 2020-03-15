@@ -1,6 +1,6 @@
 <h1><%= t'.Editing Task' %></h1>
 
-<%= render 'form', task: @task %>
+<%= render 'form', task: @task, labels: @labels  %>
 
 <div class = 'info_back'>
   <%= link_to t('Show'), @task %>
