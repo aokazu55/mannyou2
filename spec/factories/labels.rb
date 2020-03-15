@@ -1,11 +1,11 @@
 FactoryBot.define do
   factory :label do
-    label_type { '緊急' }
+    label_type { 'お仕事' }
     user
   end
 
   factory :second_label, class: Label do
-    label_type { 'しなやかに' }
+    label_type { 'プライベート' }
     user
     # association :user, factory: :admin_user
   end

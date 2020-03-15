@@ -87,7 +87,7 @@ class TasksController < ApplicationController
   def set_task
     if logged_in?
       @task = Task.find(params[:id])
-      # @labels = Label.where("user_id is null or user_id = ?", current_user.id).order(created_at: "DESC")
+      @labels = Label.where("user_id is null or user_id = ?", current_user.id).order(created_at: "DESC")
     else
       redirect_to new_session_path
     end
