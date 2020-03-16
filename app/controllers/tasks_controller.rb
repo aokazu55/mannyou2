@@ -20,23 +20,22 @@ class TasksController < ApplicationController
         @tasks = Task.all.order(priority: :desc).page(params[:page]).per(PER).where(user_id: current_user.id)
       end
 
-      if params[:task] && params[:task][:search]
+    if params[:task] && params[:task][:search]
 
-        if params[:task][:title].present? && params[:task][:status].present?
-          @tasks = Task.title_search(params[:task][:title]).status_search(params[:task][:status]).page(params[:page]).per(PER).where(user_id: current_user.id)
+      if params[:task][:title].present? && params[:task][:status].present?
+        @tasks = Task.title_search(params[:task][:title]).status_search(params[:task][:status]).page(params[:page]).per(PER).where(user_id: current_user.id)
 
-        elsif params[:task][:title].empty? && params[:task][:status].present?
-          @tasks = Task.status_search(params[:task][:status]).page(params[:page]).per(PER).where(user_id: current_user.id)
+      elsif params[:task][:title].empty? && params[:task][:status].present?
+        @tasks = Task.status_search(params[:task][:status]).page(params[:page]).per(PER).where(user_id: current_user.id)
 
-        elsif params[:task][:title].present? && params[:task][:status] == ""
-          @tasks = Task.title_search(params[:task][:title]).page(params[:page]).per(PER).where(user_id: current_user.id)
+      elsif params[:task][:title].present? && params[:task][:status] == ""
+        @tasks = Task.title_search(params[:task][:title]).page(params[:page]).per(PER).where(user_id: current_user.id)
 
-        elsif params[:task][:label_ids].present?
-          #binding.pry
-          @tasks = current_user.tasks.joins(:task_labels).where('task_labels.label_id = ?', params[:task][:label_ids]).page(params[:page]).per(PER)
-        end
+      elsif params[:task][:label_id].present?
+        #binding.pry
+        @tasks = current_user.tasks.joins(:task_labels).where('task_labels.label_id = ?', params[:task][:label_id]).page(params[:page]).per(PER)
       end
-
+    end
   end
 
   def show

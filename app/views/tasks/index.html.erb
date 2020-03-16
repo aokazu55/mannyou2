@@ -19,7 +19,7 @@
 
   <div class = 'info_label_select'>
     <%= f.label :label_search, "【ラベルで検索】" %>
-    <%= f.collection_select :label_ids, @labels, :id, :label_type, {include_blank: 'ラベルを選んでください'} %>
+    <%= f.collection_select :label_id, label_list, :id, :label_type, {include_blank: 'ラベルを選んでください'} %>
   </div>
 
   <div class = 'info_search'>
